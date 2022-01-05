@@ -40,7 +40,7 @@ sloganForm.addEventListener(`submit`, async(e) => {
     await updateCity(`slogan`, slogan, userId);
     sloganInput.value = ``;
     await refreshCity();
-})
+});
 
 
 nameForm.addEventListener(`submit`, async(e) => {
