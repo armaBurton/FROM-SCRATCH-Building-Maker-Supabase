@@ -76,7 +76,7 @@ castleDropDown.addEventListener(`change`, async() => {
     await refreshCity();
 });
 
-function playBackgroundVid(value){
+async function playBackgroundVid(value){
     switch (value){
         case `river`:
             iframeValue.src = `https://www.youtube.com/embed/zofBinqC2F4?&autoplay=1&mute=1`;
@@ -145,7 +145,7 @@ window.addEventListener(`load`, async() => {
         await refreshCity();
     } 
     const user = await getCity();
-    playBackgroundVid(user.water);
+    await playBackgroundVid(user.water);
     userId = user.user_id;
     await refreshCity();
 });
