@@ -103,7 +103,7 @@ function playBackgroundVid(value){
             iframeValue.src = `https://www.youtube.com/embed/wk9quCrd-bw?&autoplay=1&mute=1`;
             break;
         case `scottish`:
-            iframeValue.src = `https://www.youtube.com/embed/SEssIU0tcuQ?&autoplay=1&mute=1`;
+            iframeValue.src = `https://www.youtube.com/embed/SzDpLsRV-bo?&autoplay=1&mute=1`;
             break;
 
     }
@@ -144,8 +144,8 @@ window.addEventListener(`load`, async() => {
         await createDefaultCity(defaultCity);
         await refreshCity();
     } 
-    playBackgroundVid(`lake`);
     const user = await getCity();
+    playBackgroundVid(user.water);
     userId = user.user_id;
     await refreshCity();
 });
