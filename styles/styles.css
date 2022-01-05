@@ -28,6 +28,7 @@ body{
 
 main {
     /* margin-top: var(--header-height); */
+    padding-top: var(--header-height);
     height: calc(100vh - 115px);
     width: 100%;
     display: flex;
