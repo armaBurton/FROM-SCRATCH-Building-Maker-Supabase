@@ -23,6 +23,7 @@
 }
 
 body{
+    height: 100vh;
     background-image: linear-gradient(rgba(242, 0, 255, 0.75), rgba(13, 255, 0, 0.75))
 }
 
