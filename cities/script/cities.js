@@ -27,6 +27,8 @@ const displaySlogans = document.getElementById(`display-slogans`);
 const nameForm = document.getElementById(`name-form`);
 const sloganForm = document.getElementById(`slogan-form`);
 
+const iframeValue = document.getElementById(`iframe`);
+
 sloganForm.addEventListener(`submit`, async(e) => {
     e.preventDefault();
 
@@ -56,20 +58,56 @@ let userId = 0;
 waterDropDown.addEventListener(`change`, async() => {
     console.log(waterDropDown.value);
     await updateCity(`water`, waterDropDown.value, userId);
+    playBackgroundVid(waterDropDown.value);
     await refreshCity();
 });
 
 skylineDropDown.addEventListener(`change`, async() => {
     console.log(skylineDropDown.value);
     await updateCity(`skyline`, skylineDropDown.value, userId);
+    playBackgroundVid(skylineDropDown.value);
     await refreshCity();
 });
-  
+
 castleDropDown.addEventListener(`change`, async() => {
     console.log(castleDropDown.value);
     await updateCity(`castle`, castleDropDown.value, userId);
+    playBackgroundVid(castleDropDown.value);
     await refreshCity();
 });
+
+function playBackgroundVid(value){
+    switch (value){
+        case `river`:
+            iframeValue.src = `https://www.youtube.com/embed/zofBinqC2F4?&autoplay=1&mute=1`;
+            break;
+        case `lake`:
+            iframeValue.src = `https://www.youtube.com/embed/qRTVg8HHzUo?&autoplay=1&mute=1`;
+            break;
+        case `ocean`:
+            iframeValue.src = `https://www.youtube.com/embed/Xn8tufsbSz0?&autoplay=1&mute=1`;
+            break;
+        case `metro`:
+            iframeValue.src = `https://www.youtube.com/embed/_btcrl9jg3I?&autoplay=1&mute=1`;
+            break;
+        case `town`:
+            iframeValue.src = `https://www.youtube.com/embed/NMYevRLr9gw?&autoplay=1&mute=1`;
+            break;
+        case `village`:
+            iframeValue.src = `https://www.youtube.com/embed/tCqeAUFRc_k?&autoplay=1&mute=1`;
+            break;
+        case `german`:
+            iframeValue.src = `https://www.youtube.com/embed/u0rX72Bl46E?&autoplay=1&mute=1`;
+            break;
+        case `french`:
+            iframeValue.src = `https://www.youtube.com/embed/wk9quCrd-bw?&autoplay=1&mute=1`;
+            break;
+        case `scottish`:
+            iframeValue.src = `https://www.youtube.com/embed/SEssIU0tcuQ?&autoplay=1&mute=1`;
+            break;
+
+    }
+}
 
 sloganButton.addEventListener(`click`, async() => {
     const slogan = [sloganInput.value];
@@ -103,10 +141,10 @@ window.addEventListener(`load`, async() => {
             slogan: [],
             name: `Hadley's Hope`
         };
-        
         await createDefaultCity(defaultCity);
         await refreshCity();
     } 
+    playBackgroundVid(`lake`);
     const user = await getCity();
     userId = user.user_id;
     await refreshCity();
@@ -135,26 +173,26 @@ async function fetchAndRenderCity(){
 
     skylineImg.style.backgroundImage = `url(../assets/${city.skyline}.jpg)`;
     switch (city.skyline) {
-        case `river`:
+        case `metro`:
             changeDropdown(`skyline`, 0);
             break;
-        case `lake`:
+        case `town`:
             changeDropdown(`skyline`, 1);
             break;
-        case `ocean`:
+        case `village`:
             changeDropdown(`skyline`, 2);
             break;
     }
 
     castleImg.style.backgroundImage = `url(../assets/${city.castle}.jpg)`;
     switch (city.castle) {
-        case `river`:
+        case `german`:
             changeDropdown(`castle`, 0);
             break;
-        case `lake`:
+        case `french`:
             changeDropdown(`castle`, 1);
             break;
-        case `ocean`:
+        case `scottish`:
             changeDropdown(`castle`, 2);
             break;
     }
