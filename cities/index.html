@@ -1,4 +1,4 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,26 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="../styles/home.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="../../styles/home.css">
     <title>Document</title>
 </head>
 
 <body>
     <header>
         <div class="gutter-right logo">
-            <img src="./assets/big-logo.png" />
+            <img src="../../assets/big-logo.png" />
         </div>
     </header>
     <main>
-        
+        <section class="inputs">
+            <form class="form-holder">
+                <label for="name">What should we call your city?</label>
+                <input class="input" type="text" id="city-name-input" name="name">
+                <input type="button" id="city-name-button" value="Name City">
+            </form>
+            <form class="form-holder">
+                <label for="slogan">Give your city a slogan.</label>
+                <input class="input" type="text" id="slogan-input" name="slogan">
+                <input type="button" id="slogan-button" value="Enter Slogan">
+            </form>
+        </section>
+        <section class="display-section">
+            <div class="water-div" id="water-div">
+                <div id="water-holder">
+                    <label for="water"></label>
+                    <select id="water-dropdown">
+                        <option value="river">River</option>
+                        <option value="lake">Lake</option>
+                        <option value="ocean">Ocean</option>
+                    </select>
+                </div>
+                <div class="panel" id="water-img"></div>
+            </div>
+            <div class="skyline-div" id="skyline-div">
+                <div id="skyline-holder">
+                    <label for="skyline"></label>
+                    <select name="skyline" id="skyline-dropdown">
+                        <option value="metro">Metro</option>
+                        <option value="town">Town</option>
+                        <option value="village">Village</option>
+                    </select>
+                </div>
+                <div class="panel" id="skyline-img"></div>
+            </div>
+            <div class="castle-div" id="castle-div">
+                <div id="castle-holder">
+                    <label for="castle"></label>
+                    <select name="castle" id="castle-dropdown">
+                        <option value="german">German</option>
+                        <option value="french">French</option>
+                        <option value="scottish">Scottish</option>
+                    </select>
+                </div>
+                <div class="panel" id="castle-img"></div>
+            </div>
+        </section>
+        <h2 class="city">Welcome to beautiful <span id="city-name">Default Name</span></h2>
+        <section id="display-slogans">
+            
+        </section>
+        <button id=logout>Logout</button>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
 
-    <script type="module" src="./script/script.js"></script>
+    <script type="module" src="./script/cities.js"></script>
 </body>
 
 </html>
