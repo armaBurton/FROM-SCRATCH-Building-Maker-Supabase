@@ -5,7 +5,7 @@
     --magenta: hsla(192, 74, 30, 1);
     --indigo: hsla(339, 54, 50, 1);
     --chartreuse: hsla(192, 64, 50, 1);
-    --green: hsla(55, 74, 50, 1);
+    --green: #6c9a8b;
     --orange: hsla(55, 69, 30, 1);
     
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
@@ -19,14 +19,16 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Titillium Web', sans-serif;
+    vertical-align: baseline;
 }
 
 body{
-    background-color: var(--green);
+    background-image: linear-gradient(rgba(242, 0, 255, 0.75), rgba(13, 255, 0, 0.75))
 }
 
 main {
-    height: 100vh;
+    margin-top: var(--header-height);
+    height: calc(100vh - 115px);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -138,6 +140,8 @@ h2 {
 
 #water-img, #skyline-img, #castle-img{
     background-size: contain;
+    border-radius: 5px;
+    border: 3px solid yellow;
 }
 
 .input{
@@ -161,7 +165,7 @@ h2{
 
 #display-slogans{
     margin: 20px 0;
-    height: 400px;
+    height: 300px;
     width: 600px;
     display: flex;
     justify-content: flex-start;
@@ -170,6 +174,8 @@ h2{
     border: 1px solid black;
     overflow: scroll;
     overflow-x: hidden;
+    background-color:cyan;
+    border: 3px solid orange;
 }
 
 footer {
