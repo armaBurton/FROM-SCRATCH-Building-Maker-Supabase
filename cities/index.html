@@ -22,15 +22,15 @@
     </header>
     <main>
         <section class="inputs">
-            <form class="form-holder">
+            <form class="form-holder" id="name-form">
                 <label for="name">What should we call your city?</label>
                 <input class="input" type="text" id="city-name-input" name="name">
-                <input class="input-button" type="button" id="city-name-button" value="Name City">
+                <input class="city-name-button" type="button" id="city-name-button" value="Name City">
             </form>
-            <form class="form-holder">
+            <form class="form-holder" id="slogan-form">
                 <label for="slogan">Give your city a slogan.</label>
                 <input class="input" type="text" id="slogan-input" name="slogan">
-                <input class="input-button" type="button" id="slogan-button" value="Enter Slogan">
+                <input class="slogan-button" type="button" id="slogan-button" value="Enter Slogan">
             </form>
         </section>
         <section class="display-section">
@@ -68,7 +68,7 @@
                 <div class="panel" id="castle-img"></div>
             </div>
         </section>
-        <h2 class="city">Welcome to beautiful <span id="city-name">Default Name</span></h2>
+        <h2 class="city">Welcome to beautiful <span id="city-name"></span></h2>
         <section id="display-slogans">
             
         </section>

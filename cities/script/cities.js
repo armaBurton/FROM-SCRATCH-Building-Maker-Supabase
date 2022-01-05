@@ -24,6 +24,33 @@ const castleImg = document.getElementById(`castle-img`);
 const cityName = document.getElementById(`city-name`);
 const displaySlogans = document.getElementById(`display-slogans`);
 
+const nameForm = document.getElementById(`name-form`);
+const sloganForm = document.getElementById(`slogan-form`);
+
+sloganForm.addEventListener(`submit`, async(e) => {
+    e.preventDefault();
+
+    const slogan = [sloganInput.value];
+    const city = await getCity();
+    for (let s of city.slogan){
+        slogan.push(s);
+    }
+    await updateCity(`slogan`, slogan, userId);
+    sloganInput.value = ``;
+    await refreshCity();
+})
+
+
+nameForm.addEventListener(`submit`, async(e) => {
+    e.preventDefault();
+
+    const name = cityNameInput.value;
+    await updateCity(`name`, name, userId);
+    cityNameInput.value = ``;
+    await refreshCity();
+    console.log(`click`);
+});
+
 let userId = 0;
 
 waterDropDown.addEventListener(`change`, async() => {
@@ -48,19 +75,19 @@ sloganButton.addEventListener(`click`, async() => {
     const slogan = [sloganInput.value];
     const city = await getCity();
     for (let s of city.slogan){
-      slogan.push(s);
+        slogan.push(s);
     }
     await updateCity(`slogan`, slogan, userId);
     sloganInput.value = ``;
     await refreshCity();
-    console.log(userId);
 });
-
+  
 cityNameButton.addEventListener(`click`, async() => {
     const name = cityNameInput.value;
     await updateCity(`name`, name, userId);
     cityNameInput.value = ``;
     await refreshCity();
+    console.log(`click`);
 });
 
 checkAuth();

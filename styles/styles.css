@@ -203,17 +203,17 @@ label{
     background-color: yellow;
 }
 
-.input-button{
+.city-name-button, .slogan-button{
     padding-left: 10px;
     padding-right: 10px;
     background-color: cyan;
 }
 
-.input-button:hover{
+.city-name-button:hover, .slogan-button:hover{
     background-color: orange;
 }
 
-.input-button:active{
+.city-name-button:active, .slogan-button:active{
     background-color: yellow;
 }
 
