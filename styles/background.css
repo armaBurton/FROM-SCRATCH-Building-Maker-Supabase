@@ -1,0 +1,11 @@
+body{
+    content: "";
+    background-image: linear-gradient(rgba(242, 0, 255, 0.75), rgba(13, 255, 0, 0.75)), url(../assets/desert01.jpg);
+    /* background-image: url(../assets/desert01.jpg); */
+    background-size: cover;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; */
+}
