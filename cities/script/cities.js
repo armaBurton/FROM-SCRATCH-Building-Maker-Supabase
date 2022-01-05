@@ -50,27 +50,23 @@ nameForm.addEventListener(`submit`, async(e) => {
     await updateCity(`name`, name, userId);
     cityNameInput.value = ``;
     await refreshCity();
-    console.log(`click`);
 });
 
 let userId = 0;
 
 waterDropDown.addEventListener(`change`, async() => {
-    console.log(waterDropDown.value);
     await updateCity(`water`, waterDropDown.value, userId);
     playBackgroundVid(waterDropDown.value);
     await refreshCity();
 });
 
 skylineDropDown.addEventListener(`change`, async() => {
-    console.log(skylineDropDown.value);
     await updateCity(`skyline`, skylineDropDown.value, userId);
     playBackgroundVid(skylineDropDown.value);
     await refreshCity();
 });
 
 castleDropDown.addEventListener(`change`, async() => {
-    console.log(castleDropDown.value);
     await updateCity(`castle`, castleDropDown.value, userId);
     playBackgroundVid(castleDropDown.value);
     await refreshCity();
@@ -105,7 +101,6 @@ async function playBackgroundVid(value){
         case `scottish`:
             iframeValue.src = `https://www.youtube.com/embed/SzDpLsRV-bo?&autoplay=1&mute=1`;
             break;
-
     }
 }
 
@@ -125,7 +120,6 @@ cityNameButton.addEventListener(`click`, async() => {
     await updateCity(`name`, name, userId);
     cityNameInput.value = ``;
     await refreshCity();
-    console.log(`click`);
 });
 
 checkAuth();
@@ -200,7 +194,6 @@ async function fetchAndRenderCity(){
     cityName.textContent = city.name;
 
     // const sloganArr = await updateSlogan(city);
-    console.log(city.slogan);
     displaySlogans.textContent = ``;
     for (let s of city.slogan){
         const slogan = document.createElement(`p`);
