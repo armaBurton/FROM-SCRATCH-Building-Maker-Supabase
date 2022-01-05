@@ -163,6 +163,16 @@ h2{
     text-decoration: underline;
 }
 
+label{
+    color: yellow;
+    text-shadow: 0 0 5px cyan;
+}
+
+.city{
+    color:yellow;
+    text-shadow: 0 0 5px rgb(242, 0, 255);
+}
+
 #display-slogans{
     margin: 20px 0;
     height: 300px;
@@ -178,8 +188,40 @@ h2{
     border: 3px solid orange;
 }
 
-footer {
+#logout{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: cyan;
+}
+
+#logout:hover{
+    background-color: orange;
+}
+
+#logout:active{
     background-color: yellow;
+}
+
+.input-button{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: cyan;
+}
+
+.input-button:hover{
+    background-color: orange;
+}
+
+.input-button:active{
+    background-color: yellow;
+}
+
+.login-text{
+    color: black;
+}
+
+footer {
+    /* background-color: yellow; */
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -187,7 +229,8 @@ footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: var(--indigo);
-    color: var(--chartreuse);
+    /* background-color: var(--indigo); */
+    /* color: var(--chartreuse); */
+    color: rgb(242, 0, 255);
     box-shadow: var(--footer-shadow);
 }
