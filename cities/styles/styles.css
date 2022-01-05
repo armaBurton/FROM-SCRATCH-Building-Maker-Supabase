@@ -1,0 +1,266 @@
+
+* {
+    /* feel free to update these css variables for a quick theme */
+    
+    --magenta: hsla(192, 74, 30, 1);
+    --indigo: hsla(339, 54, 50, 1);
+    --chartreuse: hsla(192, 64, 50, 1);
+    --green: #6c9a8b;
+    --orange: hsla(55, 69, 30, 1);
+    
+    /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
+    
+    --header-height: 80px;
+    --shadow: 0px 0px 20px -3px rgba(0,0,0,0.45);
+    --footer-shadow: 0px 0px 20px -3px rgba(0,0,0,0.45);
+    --gutter: 30px;
+    --footer-height: 35px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+    vertical-align: baseline;
+}
+
+body{
+    background-image: linear-gradient(rgba(242, 0, 255, 0.75), rgba(13, 255, 0, 0.75))
+}
+
+main {
+    /* margin-top: var(--header-height); */
+    height: calc(100vh - 115px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: calc(var(--footer-height));
+}
+
+section {
+    background-color: var(--orange);
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: var(--gutter);
+    padding-bottom: var(--gutter); */
+    /* margin-top: var(--gutter);
+    margin-bottom: var(--gutter); */
+    border: solid 2px var(--magenta);
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    /* background-color: var(--indigo); */
+    height: var(--header-height);
+    box-shadow: var(--shadow);
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+
+#sign-in, #sign-up{
+    display: flex;
+    flex-direction: column;
+}
+
+.transparent{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.submit{
+    margin-top: 10px;
+}
+
+.left, .right{
+    background-color: yellow;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid cyan;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.gutter-right {
+    margin-right: 20px;
+}
+
+.display-section{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 1000px;
+}
+
+.panel{
+    background-color: green;
+    width: 300px;
+    min-width: 300px;
+    height: 300px;
+}
+
+.dropdown-holder{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* gap: 30px; */
+    /* width: 700px; */
+}
+
+.form-holder{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.inputs{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 610px;
+}
+
+.water-div, .skyline-div, .castle-div{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#water-img, #skyline-img, #castle-img{
+    background-size: contain;
+    border-radius: 5px;
+    border: 3px solid yellow;
+}
+
+.input{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+p{
+    margin-bottom: 10px;
+    line-height: 1.35rem;
+}
+
+header img {
+    height: var(--header-height);
+}
+
+h2{
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+label{
+    color: yellow;
+    text-shadow: 0 0 5px cyan;
+}
+
+.city{
+    color:yellow;
+    text-shadow: 0 0 5px rgb(242, 0, 255);
+}
+
+#display-slogans{
+    margin: 20px 0;
+    height: 300px;
+    width: 600px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5px 10px;
+    border: 1px solid black;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color:cyan;
+    border: 3px solid orange;
+}
+
+#logout{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: cyan;
+}
+
+#logout:hover{
+    background-color: orange;
+}
+
+#logout:active{
+    background-color: yellow;
+}
+
+.city-name-button, .slogan-button{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: cyan;
+}
+
+.city-name-button:hover, .slogan-button:hover{
+    background-color: orange;
+}
+
+.city-name-button:active, .slogan-button:active{
+    background-color: yellow;
+}
+
+.login-text{
+    color: black;
+}
+
+.video{
+    overflow: hidden;
+    /* width: 200vw; */
+    height: 100vh;
+}
+
+iframe{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    iframe {
+      /* height = 100 * (9 / 16) = 56.25 */
+      height: 56.25vw;
+    }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    iframe {
+      /* width = 100 / (9 / 16) = 177.777777 */
+      width: 177.78vh;
+    }
+  }
+
+footer {
+    /* background-color: yellow; */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: var(--footer-height);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* background-color: var(--indigo); */
+    /* color: var(--chartreuse); */
+    color: rgb(242, 0, 255);
+    box-shadow: var(--footer-shadow);
+}
